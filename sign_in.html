@@ -52,23 +52,11 @@
                 // Check if both username and password fields are filled
                 const username = document.getElementById('username').value.trim();
                 const password = passwordInput.value.trim();
-                const storedPassword = localStorage.getItem('signupPassword');
                 const strength = getPasswordStrength(password);
 
                 if (username !== '' && password !== '' && strength !== 'Weak') {
-                    // Compare the entered password with the stored password
-                    if (password === storedPassword) {
-                        // Redirect to lobby page
-                        window.location.href = 'lobby.html';
-                    } else {
-                        // Display message for incorrect password using Toastify
-                        Toastify({
-                            text: "Incorrect password. Please try again.",
-                            duration: 3000,
-                            gravity: "top",
-                            position: "center",
-                        }).showToast();
-                    }
+                    // Redirect to lobby page
+                    window.location.href = 'lobby.html';
                 } else if (strength === 'Weak') {
                     // Display Toastify message for weak password
                     Toastify({

@@ -11,6 +11,16 @@
   gap: 3rem;
 }
 
+#logo{
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+   margin-left:2vw;
+
+}
+
 #members__container {
   background-color: #262625;
   border-right: 1px solid #797a79;
