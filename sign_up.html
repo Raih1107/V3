@@ -61,12 +61,15 @@
                 const strength = getPasswordStrength(password);
 
                 if (username !== '' && email !== '' && password !== '' && strength !== 'Weak') {
+                    // Store the password in local storage
+                    localStorage.setItem('signupPassword', password);
+
                     // Perform signup logic
                     // Display success message using Toastify
                     Toastify({
                         text: "Signup successful!",
                         duration: 3000,
-                        gravity: "top", 
+                        gravity: "top",
                         position: "center",
                     }).showToast();
                     // Redirect to sign-in page
@@ -76,7 +79,7 @@
                     Toastify({
                         text: "Please choose a stronger password.",
                         duration: 3000,
-                        gravity: "top", 
+                        gravity: "top",
                         position: "center",
                     }).showToast();
                 } else {
@@ -84,7 +87,7 @@
                     Toastify({
                         text: "Please fill in all fields.",
                         duration: 3000,
-                        gravity: "top", 
+                        gravity: "top",
                         position: "center",
                     }).showToast();
                 }
